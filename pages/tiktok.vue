@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span v-html="tiktok" ref="tiktokRef"></span>
+    <span v-html="tiktok"></span>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ useHead({
 })
 
 const tiktok: Ref<string | null> = ref(null)
-const tiktokRef: Ref = ref(null)
+//const tiktokRef: Ref = ref(null)
 
 //const delay = async (n: number) => {
 //  return new Promise((resolve) => {

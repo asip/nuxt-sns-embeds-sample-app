@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span v-html="insta" ref="instagramRef"></span>
+    <span v-html="insta"></span>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ interface Window {
 declare var window: Window
 
 const insta: Ref<string | null> = ref(null)
-const instagramRef: Ref = ref(null)
+//const instagramRef: Ref = ref(null)
 
 //let script: HTMLScriptElement | null | undefined = null
 
@@ -45,10 +45,10 @@ onMounted(() => {
   }
 })
 
-onBeforeUnmount(() => {
-  //instagramRef.value.removeChild(script)
-  //script = null
-})
+//onBeforeUnmount(() => {
+//  instagramRef.value.removeChild(script)
+//  script = null
+//})
 
 </script>
 
