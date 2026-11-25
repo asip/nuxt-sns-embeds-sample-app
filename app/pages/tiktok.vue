@@ -1,16 +1,4 @@
-<template>
-  <div>
-    <span v-html="tiktok"></span>
-  </div>
-</template>
-
 <script lang="ts" setup>
-useHead({
-  script: [
-      { src: 'https://www.tiktok.com/embed.js', async: true}
-  ]
-})
-
 const tiktok: Ref<string | null> = ref(null)
 //const tiktokRef: Ref = ref(null)
 
@@ -19,6 +7,12 @@ const tiktok: Ref<string | null> = ref(null)
 //  setTimeout(resolve,n * 1000)
 //  })
 //}
+
+useHead({
+  script: [
+    { src: 'https://www.tiktok.com/embed.js', async: true}
+  ]
+})
 
 const loadTikTok = async () => {
   // await delay(1)
@@ -35,7 +29,11 @@ tiktok.value = await loadTikTok()
 
 </script>
 
+<template>
+  <div>
+    <span v-html="tiktok"></span>
+  </div>
+</template>
 
 <style>
-
 </style>

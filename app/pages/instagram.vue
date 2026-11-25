@@ -1,21 +1,9 @@
-<template>
-  <div>
-    <span v-html="insta"></span>
-  </div>
-</template>
-
 <script lang="ts" setup>
-useHead({
-  script: [
-      { src: '//www.instagram.com/embed.js', async: true}
-  ]
-})
-
-interface Window {
-  instgrm?: { Embeds: { process: () => void } }
+declare global {
+  interface Window {
+    instgrm?: { Embeds: { process: () => void } }
+  }
 }
-
-declare var window: Window
 
 const insta: Ref<string | null> = ref(null)
 //const instagramRef: Ref = ref(null)
@@ -27,6 +15,12 @@ const insta: Ref<string | null> = ref(null)
 //  setTimeout(resolve,n * 1000)
 //  })
 //}
+
+useHead({
+  script: [
+      { src: '//www.instagram.com/embed.js', async: true}
+  ]
+})
 
 const loadInstagram = async () => {
   // await delay(1)
@@ -49,9 +43,13 @@ onMounted(() => {
 //  instagramRef.value.removeChild(script)
 //  script = null
 //})
-
 </script>
 
-<style>
+<template>
+  <div>
+    <span v-html="insta"></span>
+  </div>
+</template>
 
+<style>
 </style>
